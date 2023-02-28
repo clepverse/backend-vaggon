@@ -4,7 +4,7 @@ import { activitieRoutes } from './activitie.routes';
 
 const routes = Router();
 
-routes.use('/cadastro', userRoutes);
-routes.use('/atividades', activitieRoutes);
+routes.use('/login', userRoutes);
+routes.use('/activities', activitieRoutes);
 
 export { routes };

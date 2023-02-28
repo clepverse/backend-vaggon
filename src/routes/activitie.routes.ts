@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { CreateActivitieController } from '../modules/activities/useCases/createActivitie/CreateActivitieController';
-import { GetActivitieController } from '../modules/activities/useCases/CreateActivitieController.ts/GetActivitieController';
+import { GetAllActivitiesController } from '../modules/activities/useCases/GetAllActivities/GetAllActivitiesController';
 
 const createActivitieController = new CreateActivitieController();
-const getActivitieController = new GetActivitieController();
+const getAllActivitieController = new GetAllActivitiesController();
 
 const activitieRoutes = Router();
 
 activitieRoutes.post('/', createActivitieController.handle);
-activitieRoutes.get('/todas', getActivitieController.handle);
+activitieRoutes.get('/all', getAllActivitieController.handle);
 
 export { activitieRoutes };
