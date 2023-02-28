@@ -4,7 +4,7 @@ import { ICreateActivitieDTO } from '../../dtos/CreateActivitieDTO';
 
 export class CreateActivitieUseCase {
   async execute({
-    userId,
+    user_id,
     name,
     description,
     start_date_and_time,
@@ -14,7 +14,7 @@ export class CreateActivitieUseCase {
     // Pega o ID do usuário
     const getUserId = await prisma.user.findUnique({
       where: {
-        id: userId,
+        id: user_id,
       },
     });
 
