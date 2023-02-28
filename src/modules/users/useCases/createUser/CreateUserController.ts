@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { userValidation } from '../../validations/user.validation';
+import { userValidation } from '../../validations/UserValidation';
 import { Request, Response } from 'express';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
