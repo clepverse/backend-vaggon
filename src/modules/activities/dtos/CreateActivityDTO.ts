@@ -1,6 +1,6 @@
 import { Status } from '@prisma/client';
 
-export interface ICreateActivitieDTO {
+export interface ICreateActivityDTO {
   user_id: number;
   name: string;
   description: string;

@@ -1,8 +1,8 @@
-import { Activitie } from '@prisma/client';
+import { Activity } from '@prisma/client';
 import { prisma } from '../../../../database/PrismaClient';
-import { ICreateActivitieDTO } from '../../dtos/CreateActivitieDTO';
+import { ICreateActivityDTO } from '../../dtos/CreateActivityDTO';
 
-export class CreateActivitieUseCase {
+export class CreateActivityUseCase {
   async execute({
     user_id,
     name,
@@ -10,16 +10,16 @@ export class CreateActivitieUseCase {
     start_date_and_time,
     end_date_and_time,
     status,
-  }: ICreateActivitieDTO): Promise<Activitie> {
+  }: ICreateActivityDTO): Promise<Activity> {
     // Pega o ID do usuário
-    const getUserId = await prisma.user.findUnique({
+    const connectUserId = await prisma.user.findUnique({
       where: {
         id: user_id,
       },
     });
 
     // Cria a atividade atrelada ao ID do usuário
-    const activitie = await prisma.activitie.create({
+    const activity = await prisma.activity.create({
       data: {
         name,
         description,
@@ -28,12 +28,12 @@ export class CreateActivitieUseCase {
         status,
         users: {
           connect: {
-            id: getUserId?.id,
+            id: connectUserId?.id,
           },
         },
       },
     });
 
-    return activitie;
+    return activity;
   }
 }

@@ -23,12 +23,12 @@ model User {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
-  activities Activitie[]
+  activities Activity[]
 
   @@map("users")
 }
 
-model Activitie {
+model Activity {
   id                  Int      @id @default(autoincrement())
   name                String
   description         String

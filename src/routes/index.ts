@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { userRoutes } from './user.routes';
-import { activitieRoutes } from './activitie.routes';
+import { activityRoutes } from './activity.routes';
 
 const routes = Router();
 
-routes.use('/login', userRoutes);
-routes.use('/activities', activitieRoutes);
+routes.use('/signup', userRoutes);
+routes.use('/activity', activityRoutes);
 
 export { routes };

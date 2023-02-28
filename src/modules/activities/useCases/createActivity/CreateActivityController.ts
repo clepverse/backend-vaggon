@@ -1,16 +1,16 @@
-import { activitieValidation } from '../../validations/ActivitieValidation';
+import { activityValidation } from '../../validations/ActivityValidation';
 import { Request, Response } from 'express';
-import { CreateActivitieUseCase } from './CreateActivitieUseCase';
+import { CreateActivityUseCase } from './CreateActivityUseCase';
 
-export class CreateActivitieController {
+export class CreateActivityController {
   async handle(req: Request, res: Response) {
-    await activitieValidation.validate(req.body);
+    await activityValidation.validate(req.body);
 
     const { user_id, name, description, start_date_and_time, end_date_and_time, status } = req.body;
 
-    const createActivitieUseCase = new CreateActivitieUseCase();
+    const createActivityUseCase = new CreateActivityUseCase();
 
-    const result = await createActivitieUseCase.execute({
+    const result = await createActivityUseCase.execute({
       user_id,
       name,
       description,
