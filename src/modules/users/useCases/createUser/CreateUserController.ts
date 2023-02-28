@@ -1,11 +1,11 @@
 import bcrypt from 'bcrypt';
-import { userValidation } from '../../validations/UserValidation';
+import { createUserValidation } from '../../validations/CreateUserValidation';
 import { Request, Response } from 'express';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
 export class CreateUserController {
   async handle(req: Request, res: Response) {
-    await userValidation.validate(req.body);
+    await createUserValidation.validate(req.body);
 
     const hashPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashPassword;

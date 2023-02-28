@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const userValidation = yup.object({
+export const createUserValidation = yup.object({
   login: yup
     .string()
     .trim('The login cannot include leading and trailing spaces')

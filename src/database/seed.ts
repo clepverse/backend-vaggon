@@ -14,4 +14,6 @@ async function Seed() {
       { login: 'clep6', password: hashPassword },
     ],
   });
+
+  Seed();
 }
