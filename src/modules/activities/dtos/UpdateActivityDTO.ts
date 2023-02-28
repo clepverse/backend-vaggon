@@ -1,7 +1,7 @@
 import { Status } from '@prisma/client';
 
 export interface IUpdateActivityDTO {
-  user_id: number;
+  id_activity: number;
   name?: string;
   description?: string;
   start_date_and_time?: string;

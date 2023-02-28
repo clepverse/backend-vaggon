@@ -4,7 +4,7 @@ import { IUpdateActivityDTO } from '../../dtos/UpdateActivityDTO';
 
 export class UpdateActivityUseCase {
   async execute({
-    user_id,
+    id_activity,
     name,
     description,
     start_date_and_time,
@@ -13,7 +13,7 @@ export class UpdateActivityUseCase {
   }: IUpdateActivityDTO): Promise<Activity> {
     const updatedActivity = await prisma.activity.update({
       where: {
-        id: user_id,
+        id: id_activity,
       },
       data: {
         name,

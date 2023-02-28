@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const activityValidation = yup.object({
+export const createActivityValidation = yup.object({
   name: yup
     .string()
     .min(1, 'The name needs to be at least 1 char')
