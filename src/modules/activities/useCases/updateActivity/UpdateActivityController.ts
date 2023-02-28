@@ -3,7 +3,7 @@ import { updateActivityValidation } from '../../validations/UpdateActivityValida
 import { UpdateActivityUseCase } from './UpdateActivityUseCase';
 
 export class UpdateActivityController {
-  async handle(req: Request, res: Response) {
+  async handle(req: Request, res: Response): Promise<Response> {
     await updateActivityValidation.validate(req.body);
 
     const id_activity = Number(req.params.id);

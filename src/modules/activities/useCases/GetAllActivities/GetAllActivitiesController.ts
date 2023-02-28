@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { GetAllActivitiesUseCase } from './GetAllActivitiesUseCase';
 
 export class GetAllActivitiesController {
-  async handle(req: Request, res: Response) {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { user_id } = req.body;
 
     const getAllActivitiesUseCase = new GetAllActivitiesUseCase();
