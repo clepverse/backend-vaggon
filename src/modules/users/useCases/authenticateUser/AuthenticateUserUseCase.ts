@@ -12,6 +12,13 @@ export class AuthenticateUserUseCase {
       where: {
         login,
       },
+
+      select: {
+        id: true,
+        login: true,
+        activities: true,
+        password: true,
+      },
     });
 
     if (!user) {
@@ -36,6 +43,7 @@ export class AuthenticateUserUseCase {
       user: {
         id: user.id,
         login: user.login,
+        activities: user.activities,
       },
       token,
     };

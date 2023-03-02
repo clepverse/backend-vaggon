@@ -5,7 +5,7 @@ import { authenticateRoutes } from './authenticate.routes';
 
 const routes = Router();
 
-routes.use('/signup', userRoutes);
+routes.use('/', userRoutes);
 routes.use('/activity', activityRoutes);
 routes.use(authenticateRoutes);
 
