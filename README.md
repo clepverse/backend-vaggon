@@ -17,6 +17,10 @@ Projeto criado com NodeJS na versão "18.14.0"
 * Prisma: "4.10.1"
 * Prisma-erd-generator: "1.2.5"
 * Mermaid-js/mermaid-cli: "9.4.0"
+
+### ERD do Banco de dados: ###
+![alt text](prisma/ERD.svg "Title")
+
 #### Rotas: ####
 ```
 .POST   /sessions
@@ -27,8 +31,12 @@ Projeto criado com NodeJS na versão "18.14.0"
 .PUT    /activity/:id
 .DELETE /activity/:id
 ```
-
-##### Comandos para rodar o projeto :#####
+### .env prisma ###
+````
+                      name : password       :port/database
+DATABASE_URL="mysql://mysql:docker@localhost:3306/agenda?schema=public"
+````
+#### Comandos para rodar o projeto: ####
 
 ````
 git clone https://github.com/clepverse/backend-vaggon.git
@@ -38,6 +46,11 @@ npm install
 npm run start
 npm run start:dev <- watch
 
+npx prisma db push
+npx prisma generate
+
+npx prisma studio <- Extra, caso queira acompanhar os dados que estão indo pro banco.
+
 Buid:
 npm run build
-```
+````
