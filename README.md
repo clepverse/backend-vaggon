@@ -17,9 +17,18 @@ Projeto criado com NodeJS na versão "18.14.0"
 * Prisma: "4.10.1"
 * Prisma-erd-generator: "1.2.5"
 * Mermaid-js/mermaid-cli: "9.4.0"
+#### Rotas: ####
+```
+.POST   /sessions
+.POST   /signup
+.GET    /me/:id
+.POST   /activity
+.GET    /activity
+.PUT    /activity/:id
+.DELETE /activity/:id
+```
 
-
-###### Comandos para rodar o projeto :######
+##### Comandos para rodar o projeto :#####
 
 ````
 git clone https://github.com/clepverse/backend-vaggon.git
