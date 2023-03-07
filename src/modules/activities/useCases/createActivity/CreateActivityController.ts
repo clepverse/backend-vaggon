@@ -4,7 +4,7 @@ import { CreateActivityUseCase } from './CreateActivityUseCase';
 
 export class CreateActivityController {
   async handle(req: Request, res: Response): Promise<Response> {
-    await createActivityValidation.validate(req.body);
+    await createActivityValidation.validate(req.body, { abortEarly: false });
 
     const { user_id, name, description, start_date_and_time, end_date_and_time, status } = req.body;
 

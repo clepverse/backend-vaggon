@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const createUserValidation = yup.object({
+export const createUserValidation = yup.object().shape({
   login: yup
     .string()
     .trim('The login cannot include leading and trailing spaces')
@@ -10,9 +10,16 @@ export const createUserValidation = yup.object({
     .required('The login is required'),
   password: yup
     .string()
-    .trim('The passaword cannot include leading and trailing spaces')
+    .trim('The password cannot include leading and trailing spaces')
     .strict(true)
-    .min(6, 'The password name needs to be at least 6 char')
+    .min(6, 'The password needs to be at least 6 char')
     .max(256, 'The password cannot exceed 256 char')
     .required('The password is required'),
 });
+
+// S
+
+interface iCreateUser extends yup.InferType<typeof createUserValidation> {
+  login: string;
+  password: string;
+}

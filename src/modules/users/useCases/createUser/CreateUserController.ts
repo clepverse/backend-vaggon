@@ -5,7 +5,7 @@ import { CreateUserUseCase } from './CreateUserUseCase';
 
 export class CreateUserController {
   async handle(req: Request, res: Response) {
-    await createUserValidation.validate(req.body);
+    await createUserValidation.validate(req.body, { abortEarly: false });
 
     const hashPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashPassword;
